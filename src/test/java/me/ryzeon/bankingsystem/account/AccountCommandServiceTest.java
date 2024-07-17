@@ -9,6 +9,8 @@ import me.ryzeon.bankingsystem.account.domain.model.commands.UpdateAccountBalanc
 import me.ryzeon.bankingsystem.account.domain.model.commands.UpdateAccountDetailsCommand;
 import me.ryzeon.bankingsystem.account.domain.model.exception.AccountAlreadyClosedException;
 import me.ryzeon.bankingsystem.account.domain.model.exception.AccountAlreadyExistsException;
+import me.ryzeon.bankingsystem.account.domain.model.exception.AccountClosedException;
+import me.ryzeon.bankingsystem.account.domain.model.exception.AccountNotFoundException;
 import me.ryzeon.bankingsystem.account.domain.model.valueobjects.AccountInformation;
 import me.ryzeon.bankingsystem.account.infrastructure.persistence.jpa.repositories.AccountRepository;
 import org.junit.jupiter.api.Test;
@@ -119,7 +121,7 @@ class AccountCommandServiceTest {
                 "1234567890",
                 "Jane",
                 "Doe",
-                 "jane@mail.com",
+                "jane@mail.com",
                 "987654321"));
 
         assertEquals("Jane", mockAccount.getInformation().names());
@@ -135,5 +137,26 @@ class AccountCommandServiceTest {
         accountCommandService.handle(new UpdateAccountBalanceCommand("1234567890", 2000.00));
 
         assertEquals(2000.00, mockAccount.getBalance());
+    }
+
+    @Test
+    void updateAccountBalanceError() {
+        when(accountRepository.findByAccountNumber("1234567890")).thenReturn(Optional.empty());
+        // Act & Assert
+        Executable executable = () -> accountCommandService.handle(new UpdateAccountBalanceCommand("1234567890", 2000.00));
+
+        // Assert
+        assertThrows(AccountNotFoundException.class, executable);
+    }
+
+    @Test
+    void updateAccountBalanceWhenAccountIsClosedError() {
+        mockAccount.setActiveAccount(false);
+        when(accountRepository.findByAccountNumber("1234567890")).thenReturn(Optional.of(mockAccount));
+        // Act & Assert
+        Executable executable = () -> accountCommandService.handle(new UpdateAccountBalanceCommand("1234567890", 2000.00));
+
+        // Assert
+        assertThrows(AccountClosedException.class, executable);
     }
 }

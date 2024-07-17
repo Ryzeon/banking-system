@@ -14,8 +14,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -64,5 +63,18 @@ class AccountQueryServiceTest {
 
         // Verify
         verify(accountRepository).findByAccountNumber("1234567890");
+    }
+
+    @Test
+    void testAccountNotFound() {
+        when(accountRepository.findById("123")).thenReturn(Optional.empty());
+        // Here we simulate the call to the service
+        Account found = accountQueryService.handle(new GetAccountByIdQuery("123")).orElse(null);
+
+        // Assert
+        assertNull(found);
+
+        // Verify
+        verify(accountRepository).findById("123");
     }
 }

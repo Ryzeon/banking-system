@@ -2,6 +2,7 @@ package me.ryzeon.bankingsystem.account.domain.model.aggregates;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import me.ryzeon.bankingsystem.account.domain.model.commands.CreateAccountCommand;
 import me.ryzeon.bankingsystem.account.domain.model.valueobjects.AccountInformation;
 import org.springframework.data.annotation.CreatedDate;
@@ -9,6 +10,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 
 import java.util.Date;
 
+@EqualsAndHashCode
 @Data
 @Entity
 public class Account {

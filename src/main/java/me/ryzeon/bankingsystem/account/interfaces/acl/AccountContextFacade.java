@@ -29,7 +29,8 @@ public class AccountContextFacade {
                 .orElseThrow(() -> new RuntimeException("Account number provided does not exist."));
     }
 
-    public void updateAccountBalance(String accountNumber, Double amount) {
+    public boolean updateAccountBalance(String accountNumber, Double amount) {
         accountCommandService.handle(new UpdateAccountBalanceCommand(accountNumber, amount));
+        return true;
     }
 }
