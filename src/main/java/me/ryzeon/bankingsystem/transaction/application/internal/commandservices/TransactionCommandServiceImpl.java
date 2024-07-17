@@ -1,6 +1,9 @@
 package me.ryzeon.bankingsystem.transaction.application.internal.commandservices;
 
 import lombok.AllArgsConstructor;
+import me.ryzeon.bankingsystem.account.domain.model.exception.AccountNotFoundException;
+import me.ryzeon.bankingsystem.account.domain.model.exception.InsufficientBalanceException;
+import me.ryzeon.bankingsystem.account.domain.model.exception.InvalidTransactionException;
 import me.ryzeon.bankingsystem.transaction.application.internal.outboundservices.acl.ExternalAccountService;
 import me.ryzeon.bankingsystem.transaction.domain.model.aggregates.Transaction;
 import me.ryzeon.bankingsystem.transaction.domain.model.commands.CreateTransactionCommand;
@@ -28,7 +31,7 @@ public class TransactionCommandServiceImpl implements TransactionCommandService 
             try {
                 transactionType = TransactionType.valueOf(command.transactionType());
             } catch (IllegalArgumentException e) {
-                throw new RuntimeException("Invalid transaction type provided.");
+                throw new InvalidTransactionException();
             }
 
             // Check if the account balance is sufficient for the transaction
@@ -38,10 +41,10 @@ public class TransactionCommandServiceImpl implements TransactionCommandService 
                 externalAccountService.updateAccountBalance(command.accountNumber(), newBalance);
                 return Optional.of(transactionRepository.save(new Transaction(command, accountBalance, newBalance)));
             } else {
-                throw new RuntimeException("Insufficient balance in the account.");
+                throw new InsufficientBalanceException();
             }
         } else {
-            throw new RuntimeException("Account number provided does not exist.");
+            throw new AccountNotFoundException();
         }
     }
 }
