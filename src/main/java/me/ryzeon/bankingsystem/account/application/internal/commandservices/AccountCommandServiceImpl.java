@@ -8,6 +8,7 @@ import me.ryzeon.bankingsystem.account.domain.model.commands.UpdateAccountBalanc
 import me.ryzeon.bankingsystem.account.domain.model.commands.UpdateAccountDetailsCommand;
 import me.ryzeon.bankingsystem.account.domain.model.exception.AccountAlreadyClosedException;
 import me.ryzeon.bankingsystem.account.domain.model.exception.AccountAlreadyExistsException;
+import me.ryzeon.bankingsystem.account.domain.model.exception.AccountClosedException;
 import me.ryzeon.bankingsystem.account.domain.model.exception.AccountNotFoundException;
 import me.ryzeon.bankingsystem.account.domain.model.valueobjects.AccountInformation;
 import me.ryzeon.bankingsystem.account.domain.services.AccountCommandService;
@@ -40,6 +41,9 @@ public class AccountCommandServiceImpl implements AccountCommandService {
     public void handle(UpdateAccountBalanceCommand command) {
         Account account = accountRepository.findByAccountNumber(command.accountNumber())
                 .orElseThrow(AccountNotFoundException::new);
+        if (!account.isActiveAccount()) {
+            throw new AccountClosedException();
+        }
         account.setBalance(command.amount());
         accountRepository.save(account);
     }

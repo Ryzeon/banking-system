@@ -33,7 +33,7 @@ public class ExternalAccountService {
      * @param accountNumber {@link String} accountNumber
      * @param amount {@link Double} amount
      */
-    public void updateAccountBalance(String accountNumber, Double amount) {
-        accountContextFacade.updateAccountBalance(accountNumber, amount);
+    public boolean updateAccountBalance(String accountNumber, Double amount) {
+        return accountContextFacade.updateAccountBalance(accountNumber, amount);
     }
 }
