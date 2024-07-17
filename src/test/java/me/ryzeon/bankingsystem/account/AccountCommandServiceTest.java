@@ -9,11 +9,11 @@ import me.ryzeon.bankingsystem.account.domain.model.commands.UpdateAccountBalanc
 import me.ryzeon.bankingsystem.account.domain.model.commands.UpdateAccountDetailsCommand;
 import me.ryzeon.bankingsystem.account.domain.model.exception.AccountAlreadyClosedException;
 import me.ryzeon.bankingsystem.account.domain.model.exception.AccountAlreadyExistsException;
-import me.ryzeon.bankingsystem.account.domain.model.queries.GetAccountHolderByAccountNumberQuery;
 import me.ryzeon.bankingsystem.account.domain.model.valueobjects.AccountInformation;
 import me.ryzeon.bankingsystem.account.infrastructure.persistence.jpa.repositories.AccountRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.api.function.Executable;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -72,17 +72,21 @@ class AccountCommandServiceTest {
 
     @Test
     void createAccountError() {
+        // Arrange
         when(accountRepository.findByAccountNumber("1234567890")).thenReturn(Optional.of(mockAccount));
-        assertThrows(AccountAlreadyExistsException.class, () -> accountCommandService.handle(
-                new CreateAccountCommand(
-                        "1234567890",
-                        1000.00,
-                        "John",
-                        "Doe",
-                        "john.doe@mail.com",
-                        "123456789"
-                )));
+        CreateAccountCommand command = new CreateAccountCommand(
+                "1234567890",
+                1000.00,
+                "John",
+                "Doe",
+                "john.doe@mail.com",
+                "123456789"
+        );
+
+        // Act & Assert
+        assertThrows(AccountAlreadyExistsException.class, () -> accountCommandService.handle(command));
     }
+
 
     @Test
     void closeAccount() {
@@ -100,7 +104,11 @@ class AccountCommandServiceTest {
     void closeAccountError() {
         mockAccount.setActiveAccount(false);
         when(accountRepository.findByAccountNumber("1234567890")).thenReturn(Optional.of(mockAccount));
-        assertThrows(AccountAlreadyClosedException.class, () -> accountCommandService.handle(new CloseAccountCommand("1234567890")));
+        // Act & Assert
+        Executable executable = () -> accountCommandService.handle(new CloseAccountCommand("1234567890"));
+
+        // Assert
+        assertThrows(AccountAlreadyClosedException.class, executable);
     }
 
     @Test
