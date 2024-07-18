@@ -35,8 +35,13 @@ public class Account {
     @LastModifiedDate
     private Date updatedAt;
 
-    private Date deletedAt; // Soft delete
+    private Date deletedAt;
 
+    /**
+     * Default constructor initializing a new Account with default values.
+     * Sets balance to 0.0, creates a new AccountInformation object, sets account number to an empty string,
+     * and marks the account as active.
+     */
     public Account() {
         this.balance = 0.0;
         this.information = new AccountInformation();
@@ -44,6 +49,13 @@ public class Account {
         this.activeAccount = true;
     }
 
+    /**
+     * Constructs a new Account using a CreateAccountCommand.
+     * Initializes the account with the command's initial balance, account information, account number,
+     * and sets the account as active.
+     *
+     * @param command The command containing the initial setup information for the account.
+     */
     public Account(CreateAccountCommand command) {
         this.balance = command.initialBalance();
         this.information = new AccountInformation(
@@ -56,11 +68,20 @@ public class Account {
         this.activeAccount = true;
     }
 
+    /**
+     * Marks the account as inactive and sets the deletedAt timestamp to the current date.
+     * This method is used for soft deletion of the account.
+     */
     public void closeAccount() {
         this.activeAccount = false;
         this.deletedAt = new Date();
     }
 
+    /**
+     * Updates the account's information with the provided AccountInformation object.
+     *
+     * @param information The new account information to be set.
+     */
     public void updateInformation(AccountInformation information) {
         this.information = information;
     }

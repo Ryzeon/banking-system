@@ -23,16 +23,30 @@ public class Transaction {
 
     private TransactionType transactionType;
 
+    /**
+     * Default constructor for creating a transaction with default values.
+     * Initializes a new transaction with an empty account number, a transaction amount of 0.0,
+     * and sets the transaction type to DEPOSIT.
+     */
     public Transaction() {
         this.accountNumber = "";
         this.amount = 0.0;
         this.transactionType = TransactionType.DEPOSIT;
     }
 
+    /**
+     * Constructs a new transaction using the provided {@link CreateTransactionCommand}, old balance, and amount.
+     * This constructor is used to create a transaction with specific details such as the account number,
+     * old balance, transaction amount, and transaction type derived from the command.
+     *
+     * @param command    The command containing the details for the transaction.
+     * @param oldBalance The old balance before the transaction is applied.
+     * @param amount     The amount of the transaction.
+     */
     public Transaction(CreateTransactionCommand command, Double oldBalance, Double amount) {
         this.accountNumber = command.accountNumber();
         this.oldBalance = oldBalance;
         this.amount = amount;
-        this.transactionType =  TransactionType.valueOf(command.transactionType());
+        this.transactionType = TransactionType.valueOf(command.transactionType());
     }
 }
