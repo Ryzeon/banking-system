@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/media/ryzeon/disco_pro/@GlobalR/@Coding/banking-system/src/main/java/me/ryzeon/bankingsystem</OriginalElement>
+  <nodes>
+    <node x="1458.0" y="1807.0">me.ryzeon.bankingsystem.transaction.application.internal.commandservices.TransactionCommandServiceImpl</node>
+    <node x="984.5" y="1807.0">me.ryzeon.bankingsystem.account.interfaces.res.resources.UpdateAccountDetailsResource</node>
+    <node x="1960.5" y="1167.0">me.ryzeon.bankingsystem.account.interfaces.acl.AccountContextFacade</node>
+    <node x="-232.0" y="1807.0">me.ryzeon.bankingsystem.transaction.interfaces.res.transforms.CreateTransactionCommandFromResourceAssembler</node>
+    <node x="2474.5" y="1167.0">me.ryzeon.bankingsystem.transaction.interfaces.res.resources.CreateDepositTransactionResource</node>
+    <node x="2884.0" y="1807.0">me.ryzeon.bankingsystem.transaction.interfaces.res.resources.CreateWithdrawalTransactionResource</node>
+    <node x="1950.5" y="1807.0">me.ryzeon.bankingsystem.account.interfaces.res.resources.CreateAccountResource</node>
+    <node x="1843.0" y="1527.0">me.ryzeon.bankingsystem.account.domain.model.exception.InsufficientBalanceException</node>
+    <node x="568.5" y="527.0">me.ryzeon.bankingsystem.account.domain.model.exception.AccountAlreadyClosedException</node>
+    <node x="1070.0" y="1167.0">me.ryzeon.bankingsystem.account.application.internal.queryservices.AccountQueryServiceImpl</node>
+    <node x="242.5" y="355.5">me.ryzeon.bankingsystem.account.domain.model.valueobjects.AccountInformation</node>
+    <node x="450.5" y="267.0">me.ryzeon.bankingsystem.transaction.interfaces.res.transforms.TransactionResourceFromEntityAssembler</node>
+    <node x="208.0" y="1167.0">me.ryzeon.bankingsystem.shared.infrastructure.persistence.jpa.configuration.JpaConfiguration</node>
+    <node x="-22.5" y="527.0">me.ryzeon.bankingsystem.account.domain.model.exception.AccountClosedException</node>
+    <node x="1757.0" y="807.0">me.ryzeon.bankingsystem.account.domain.model.commands.CloseAccountCommand</node>
+    <node x="2142.0" y="807.0">me.ryzeon.bankingsystem.account.domain.model.commands.UpdateAccountBalanceCommand</node>
+    <node x="572.0" y="1807.0">me.ryzeon.bankingsystem.transaction.interfaces.res.TransactionController</node>
+    <node x="271.5" y="1807.0">me.ryzeon.bankingsystem.BankingSystemApplication</node>
+    <node x="864.5" y="107.0">me.ryzeon.bankingsystem.account.interfaces.res.transforms.AccountResourceFromEntityAssembler</node>
+    <node x="2406.0" y="1307.0">me.ryzeon.bankingsystem.account.domain.model.commands.CreateAccountCommand</node>
+    <node x="2002.0" y="1307.0">me.ryzeon.bankingsystem.transaction.application.internal.outboundservices.acl.ExternalAccountService</node>
+    <node x="682.5" y="1320.0">me.ryzeon.bankingsystem.transaction.domain.services.TransactionCommandService</node>
+    <node x="2268.5" y="1540.0">me.ryzeon.bankingsystem.transaction.infrastructure.persistence.jpa.repositories.TransactionRepository</node>
+    <node x="430.0" y="1167.0">me.ryzeon.bankingsystem.transaction.domain.model.valueobjects.TransactionType</node>
+    <node x="922.5" y="820.0">me.ryzeon.bankingsystem.account.infrastructure.persistence.jpa.repositories.AccountRepository</node>
+    <node x="913.0" y="1398.5">me.ryzeon.bankingsystem.transaction.domain.model.aggregates.Transaction</node>
+    <node x="1293.5" y="820.0">me.ryzeon.bankingsystem.account.domain.services.AccountQueryService</node>
+    <node x="658.0" y="1167.0">me.ryzeon.bankingsystem.account.application.internal.commandservices.AccountCommandServiceImpl</node>
+    <node x="1425.5" y="527.0">me.ryzeon.bankingsystem.account.domain.model.commands.UpdateAccountDetailsCommand</node>
+    <node x="1365.5" y="1307.0">me.ryzeon.bankingsystem.account.domain.model.exception.InvalidTransactionException</node>
+    <node x="1445.0" y="1167.0">me.ryzeon.bankingsystem.account.interfaces.res.AccountController</node>
+    <node x="266.0" y="609.5">me.ryzeon.bankingsystem.account.domain.model.aggregates.Account</node>
+    <node x="2402.0" y="1807.0">me.ryzeon.bankingsystem.account.interfaces.res.transforms.CreateAccountCommandFromResourceAssembler</node>
+    <node x="-185.5" y="1527.0">me.ryzeon.bankingsystem.transaction.domain.model.commands.CreateTransactionCommand</node>
+    <node x="451.0" y="107.0">me.ryzeon.bankingsystem.transaction.interfaces.res.resources.TransactionResource</node>
+    <node x="1076.5" y="540.0">me.ryzeon.bankingsystem.account.domain.services.AccountCommandService</node>
+    <node x="1542.0" y="1527.0">me.ryzeon.bankingsystem.account.domain.model.queries.GetAccountByIdQuery</node>
+    <node x="1686.0" y="1307.0">me.ryzeon.bankingsystem.account.domain.model.exception.AccountNotFoundException</node>
+    <node x="842.5" y="-53.0">me.ryzeon.bankingsystem.account.interfaces.res.resources.AccountResource</node>
+    <node x="1909.5" y="527.0">me.ryzeon.bankingsystem.account.domain.model.queries.GetAccountHolderByAccountNumberQuery</node>
+    <node x="-228.0" y="807.0">me.ryzeon.bankingsystem.account.domain.model.exception.AccountAlreadyExistsException</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="me.ryzeon.bankingsystem.transaction.application.internal.commandservices.TransactionCommandServiceImpl" target="me.ryzeon.bankingsystem.account.domain.model.exception.InsufficientBalanceException" relationship="CREATE">
+      <point x="0.0" y="-27.0" />
+      <point x="1681.0" y="1734.0" />
+      <point x="1981.0" y="1734.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.account.application.internal.commandservices.AccountCommandServiceImpl" target="me.ryzeon.bankingsystem.account.domain.services.AccountCommandService" relationship="REALIZATION">
+      <point x="122.0" y="-27.0" />
+      <point x="963.0" y="1114.0" />
+      <point x="1138.75" y="1114.0" />
+      <point x="-62.25" y="14.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.account.domain.model.aggregates.Account" target="me.ryzeon.bankingsystem.account.domain.model.valueobjects.AccountInformation" relationship="CREATE">
+      <point x="67.5" y="-224.5" />
+      <point x="468.5" y="514.0" />
+      <point x="501.0" y="514.0" />
+      <point x="501.0" y="454.0" />
+      <point x="510.25" y="454.0" />
+      <point x="89.25" y="38.5" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.transaction.application.internal.commandservices.TransactionCommandServiceImpl" target="me.ryzeon.bankingsystem.transaction.infrastructure.persistence.jpa.repositories.TransactionRepository" relationship="TO_ONE">
+      <point x="148.66666666666669" y="-27.0" />
+      <point x="1829.6666666666665" y="1774.0" />
+      <point x="2181.0" y="1774.0" />
+      <point x="2181.0" y="1594.0" />
+      <point x="2381.0" y="1594.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.account.application.internal.commandservices.AccountCommandServiceImpl" target="me.ryzeon.bankingsystem.account.domain.model.exception.AccountAlreadyExistsException" relationship="CREATE">
+      <point x="-122.0" y="-27.0" />
+      <point x="719.0" y="1134.0" />
+      <point x="401.0" y="1134.0" />
+      <point x="401.0" y="1074.0" />
+      <point x="-79.0" y="1074.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.account.interfaces.acl.AccountContextFacade" target="me.ryzeon.bankingsystem.account.domain.model.queries.GetAccountHolderByAccountNumberQuery" relationship="CREATE">
+      <point x="120.25" y="-27.0" />
+      <point x="2321.25" y="1134.0" />
+      <point x="2321.0" y="1134.0" />
+      <point x="2321.0" y="874.0" />
+      <point x="2101.0" y="874.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.transaction.domain.model.aggregates.Transaction" target="me.ryzeon.bankingsystem.transaction.domain.model.valueobjects.TransactionType" relationship="TO_ONE">
+      <point x="0.0" y="-155.5" />
+      <point x="1121.0" y="1294.0" />
+      <point x="521.0" y="1294.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.transaction.interfaces.res.transforms.CreateTransactionCommandFromResourceAssembler" target="me.ryzeon.bankingsystem.transaction.domain.model.commands.CreateTransactionCommand" relationship="CREATE">
+      <point x="0.0" y="-27.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.account.application.internal.commandservices.AccountCommandServiceImpl" target="me.ryzeon.bankingsystem.account.domain.model.exception.AccountClosedException" relationship="CREATE">
+      <point x="-122.0" y="-27.0" />
+      <point x="719.0" y="1134.0" />
+      <point x="401.0" y="1134.0" />
+      <point x="401.0" y="1074.0" />
+      <point x="101.0" y="1074.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.account.interfaces.res.AccountController" target="me.ryzeon.bankingsystem.account.domain.model.commands.UpdateAccountDetailsCommand" relationship="CREATE">
+      <point x="118.0" y="-27.0" />
+      <point x="1799.0" y="1114.0" />
+      <point x="2101.0" y="1114.0" />
+      <point x="2101.0" y="1094.0" />
+      <point x="1641.0" y="1094.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.account.interfaces.res.AccountController" target="me.ryzeon.bankingsystem.account.domain.services.AccountCommandService" relationship="TO_ONE">
+      <point x="-118.0" y="-27.0" />
+      <point x="1563.0" y="1114.0" />
+      <point x="1421.0" y="1114.0" />
+      <point x="1421.0" y="874.0" />
+      <point x="1263.25" y="874.0" />
+      <point x="62.25" y="14.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.account.interfaces.res.AccountController" target="me.ryzeon.bankingsystem.account.domain.model.commands.CloseAccountCommand" relationship="CREATE">
+      <point x="118.0" y="-27.0" />
+      <point x="1799.0" y="1114.0" />
+      <point x="2101.0" y="1114.0" />
+      <point x="2101.0" y="1094.0" />
+      <point x="1881.0" y="1094.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.transaction.interfaces.res.transforms.TransactionResourceFromEntityAssembler" target="me.ryzeon.bankingsystem.transaction.interfaces.res.resources.TransactionResource" relationship="CREATE">
+      <point x="0.0" y="-27.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.transaction.application.internal.commandservices.TransactionCommandServiceImpl" target="me.ryzeon.bankingsystem.transaction.application.internal.outboundservices.acl.ExternalAccountService" relationship="TO_ONE">
+      <point x="148.66666666666669" y="-27.0" />
+      <point x="1829.6666666666665" y="1774.0" />
+      <point x="2181.0" y="1774.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.account.application.internal.commandservices.AccountCommandServiceImpl" target="me.ryzeon.bankingsystem.account.domain.model.exception.AccountAlreadyClosedException" relationship="CREATE">
+      <point x="-122.0" y="-27.0" />
+      <point x="719.0" y="1134.0" />
+      <point x="401.0" y="1134.0" />
+      <point x="401.0" y="1074.0" />
+      <point x="721.0" y="1074.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.account.interfaces.res.AccountController" target="me.ryzeon.bankingsystem.account.domain.services.AccountQueryService" relationship="TO_ONE">
+      <point x="-118.0" y="-27.0" />
+      <point x="1563.0" y="1114.0" />
+      <point x="1421.0" y="1114.0" />
+      <point x="1421.0" y="894.0" />
+      <point x="1461.0" y="894.0" />
+      <point x="1461.0" y="874.0" />
+      <point x="1454.75" y="874.0" />
+      <point x="53.75" y="14.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.account.application.internal.commandservices.AccountCommandServiceImpl" target="me.ryzeon.bankingsystem.account.infrastructure.persistence.jpa.repositories.AccountRepository" relationship="TO_ONE">
+      <point x="0.0" y="-27.0" />
+      <point x="841.0" y="1134.0" />
+      <point x="1021.0" y="1134.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.account.interfaces.acl.AccountContextFacade" target="me.ryzeon.bankingsystem.account.domain.services.AccountQueryService" relationship="TO_ONE">
+      <point x="-120.25" y="-27.0" />
+      <point x="2080.75" y="1134.0" />
+      <point x="1461.0" y="1134.0" />
+      <point x="1461.0" y="874.0" />
+      <point x="1454.75" y="874.0" />
+      <point x="53.75" y="14.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.account.application.internal.commandservices.AccountCommandServiceImpl" target="me.ryzeon.bankingsystem.account.domain.model.aggregates.Account" relationship="CREATE">
+      <point x="-122.0" y="-27.0" />
+      <point x="719.0" y="1134.0" />
+      <point x="401.0" y="1134.0" />
+      <point x="0.0" y="224.5" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.transaction.application.internal.commandservices.TransactionCommandServiceImpl" target="me.ryzeon.bankingsystem.transaction.domain.services.TransactionCommandService" relationship="REALIZATION">
+      <point x="-148.66666666666669" y="-27.0" />
+      <point x="1532.3333333333333" y="1774.0" />
+      <point x="890.25" y="1774.0" />
+      <point x="69.25" y="14.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.account.application.internal.queryservices.AccountQueryServiceImpl" target="me.ryzeon.bankingsystem.account.domain.services.AccountQueryService" relationship="REALIZATION">
+      <point x="85.5" y="-27.0" />
+      <point x="1326.5" y="1134.0" />
+      <point x="1347.25" y="1134.0" />
+      <point x="-53.75" y="14.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.account.interfaces.res.AccountController" target="me.ryzeon.bankingsystem.account.domain.model.queries.GetAccountHolderByAccountNumberQuery" relationship="CREATE">
+      <point x="118.0" y="-27.0" />
+      <point x="1799.0" y="1114.0" />
+      <point x="2101.0" y="1114.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.account.domain.model.aggregates.Account" target="me.ryzeon.bankingsystem.account.domain.model.valueobjects.AccountInformation" relationship="TO_ONE">
+      <point x="-67.5" y="-224.5" />
+      <point x="333.5" y="574.0" />
+      <point x="331.75" y="574.0" />
+      <point x="-89.25" y="38.5" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.account.application.internal.queryservices.AccountQueryServiceImpl" target="me.ryzeon.bankingsystem.account.infrastructure.persistence.jpa.repositories.AccountRepository" relationship="TO_ONE">
+      <point x="-85.5" y="-27.0" />
+      <point x="1155.5" y="1134.0" />
+      <point x="1021.0" y="1134.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.transaction.application.internal.commandservices.TransactionCommandServiceImpl" target="me.ryzeon.bankingsystem.transaction.domain.model.aggregates.Transaction" relationship="CREATE">
+      <point x="0.0" y="-27.0" />
+      <point x="1681.0" y="1734.0" />
+      <point x="1121.0" y="1734.0" />
+      <point x="0.0" y="155.5" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.account.interfaces.acl.AccountContextFacade" target="me.ryzeon.bankingsystem.account.domain.model.commands.UpdateAccountBalanceCommand" relationship="CREATE">
+      <point x="120.25" y="-27.0" />
+      <point x="2321.25" y="1134.0" />
+      <point x="2321.0" y="1134.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.transaction.interfaces.res.TransactionController" target="me.ryzeon.bankingsystem.transaction.domain.services.TransactionCommandService" relationship="TO_ONE">
+      <point x="0.0" y="-27.0" />
+      <point x="761.0" y="1774.0" />
+      <point x="751.75" y="1774.0" />
+      <point x="-69.25" y="14.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.transaction.application.internal.commandservices.TransactionCommandServiceImpl" target="me.ryzeon.bankingsystem.account.domain.model.exception.AccountNotFoundException" relationship="CREATE">
+      <point x="0.0" y="-27.0" />
+      <point x="1681.0" y="1734.0" />
+      <point x="1821.0" y="1734.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.transaction.application.internal.commandservices.TransactionCommandServiceImpl" target="me.ryzeon.bankingsystem.account.domain.model.exception.InvalidTransactionException" relationship="CREATE">
+      <point x="0.0" y="-27.0" />
+      <point x="1681.0" y="1734.0" />
+      <point x="1501.0" y="1734.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.account.interfaces.acl.AccountContextFacade" target="me.ryzeon.bankingsystem.account.domain.services.AccountCommandService" relationship="TO_ONE">
+      <point x="-120.25" y="-27.0" />
+      <point x="2080.75" y="1134.0" />
+      <point x="1461.0" y="1134.0" />
+      <point x="1461.0" y="1094.0" />
+      <point x="1421.0" y="1094.0" />
+      <point x="1421.0" y="874.0" />
+      <point x="1263.25" y="874.0" />
+      <point x="62.25" y="14.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.account.application.internal.commandservices.AccountCommandServiceImpl" target="me.ryzeon.bankingsystem.account.domain.model.valueobjects.AccountInformation" relationship="CREATE">
+      <point x="-122.0" y="-27.0" />
+      <point x="719.0" y="1134.0" />
+      <point x="401.0" y="1134.0" />
+      <point x="401.0" y="1074.0" />
+      <point x="901.0" y="1074.0" />
+      <point x="901.0" y="514.0" />
+      <point x="501.0" y="514.0" />
+      <point x="501.0" y="454.0" />
+      <point x="510.25" y="454.0" />
+      <point x="89.25" y="38.5" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.account.interfaces.res.transforms.CreateAccountCommandFromResourceAssembler" target="me.ryzeon.bankingsystem.account.domain.model.commands.CreateAccountCommand" relationship="CREATE">
+      <point x="0.0" y="-27.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.account.interfaces.res.transforms.AccountResourceFromEntityAssembler" target="me.ryzeon.bankingsystem.account.interfaces.res.resources.AccountResource" relationship="CREATE">
+      <point x="0.0" y="-27.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="me.ryzeon.bankingsystem.transaction.application.internal.outboundservices.acl.ExternalAccountService" target="me.ryzeon.bankingsystem.account.interfaces.acl.AccountContextFacade" relationship="TO_ONE">
+      <point x="0.0" y="-27.0" />
+      <point x="2181.0" y="1274.0" />
+      <point x="2201.0" y="1274.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.386685552407932" showDependencies="true" x="1533.0" y="914.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
