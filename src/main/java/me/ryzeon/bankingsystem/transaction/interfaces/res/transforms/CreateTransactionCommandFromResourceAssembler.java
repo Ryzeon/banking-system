@@ -1,12 +1,13 @@
 package me.ryzeon.bankingsystem.transaction.interfaces.res.transforms;
 
-import lombok.experimental.UtilityClass;
 import me.ryzeon.bankingsystem.transaction.domain.model.commands.CreateTransactionCommand;
 import me.ryzeon.bankingsystem.transaction.interfaces.res.resources.CreateDepositTransactionResource;
 import me.ryzeon.bankingsystem.transaction.interfaces.res.resources.CreateWithdrawalTransactionResource;
 
-@UtilityClass
 public class CreateTransactionCommandFromResourceAssembler {
+
+    private CreateTransactionCommandFromResourceAssembler() {
+    }
 
     /**
      * Overloaded method to convert a CreateWithdrawalTransactionResource to a CreateTransactionCommand
@@ -14,7 +15,7 @@ public class CreateTransactionCommandFromResourceAssembler {
      * @param resource CreateWithdrawalTransactionResource
      * @return CreateTransactionCommand
      */
-    public CreateTransactionCommand toCommandFromResource(CreateWithdrawalTransactionResource resource) {
+    public static CreateTransactionCommand toCommandFromResource(CreateWithdrawalTransactionResource resource) {
         return new CreateTransactionCommand(
                 resource.accountNumber(),
                 resource.amount(),
@@ -28,7 +29,7 @@ public class CreateTransactionCommandFromResourceAssembler {
      * @param resource CreateDepositTransactionResource
      * @return CreateTransactionCommand
      */
-    public CreateTransactionCommand toCommandFromResource(CreateDepositTransactionResource resource) {
+    public static CreateTransactionCommand toCommandFromResource(CreateDepositTransactionResource resource) {
         return new CreateTransactionCommand(
                 resource.accountNumber(),
                 resource.amount(),
